@@ -1,0 +1,37 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  .question__text {
+    padding: 1rem;
+    line-height: 1.2;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .question__answers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .answer {
+      padding: 1rem;
+
+
+      &--selected {
+        background-color: lightgray;
+      }
+
+      &:not(.answer:last-child) {
+        border-bottom: 1px solid lightgray;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: lightgray;
+      }
+    }
+  }
+}

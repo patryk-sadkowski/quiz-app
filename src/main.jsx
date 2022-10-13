@@ -1,10 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import "reset.css";
+import "@Styles/main.scss";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./components/App/App";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QuizPage } from "./pages/QuizPage/QuizPage";
+import { HomePage } from "./pages/HomePage/HomePage";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/:quizID",
+    element: <QuizPage />,
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
-)
+);
